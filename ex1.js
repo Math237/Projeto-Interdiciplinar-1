@@ -22,11 +22,11 @@ function adicionarResposta(){
     var resposta = {};
     resposta.conclusao = prompt("Data da conclusão:");
     resposta.solucao = prompt("Como você solucionou o problema:");
-    
+    i++
 
 }
 
-function listarChamados(){
+function adicionarResposta(){
 	// Aqui vai o código para listar os chamados.
 
 console.log("==== Chamados ====");
@@ -35,13 +35,6 @@ console.log("Data:", listaChamados[i].data);
 console.log("Cliente:", listaChamados[i].cliente);
 console.log("Local:", listaChamados[i].local);
 console.log("Descrição:", listaChamados[i].descricao);
-console.log("Data da Conclusão de chamado:",  listaChamados[i].conclusao);
-console.log("Solução:",  listaChamados[i].resposta);
-
-
-
-
-
 
     }
 
@@ -49,12 +42,21 @@ console.log("Solução:",  listaChamados[i].resposta);
 
 
 }
+function listarResposta(){
+ console.log("==== Resposta ====");
+ for(var i = 0; i < listarResposta; i++){
+    console.log("Data da Conclusão de chamado:",  listarResposta[i].conclusao);
+    console.log("Solução:", listarResposta[i].solucao);
+    
+}
+
+}
 
 var continua = 's';
 while(continua == 's'){
-		var opcao = parseInt(prompt("O que deseja Fazer:\n 1- Adicionar chamado\n 2 - Mostrar resposta \n3 - listar chamados "));
+		var opcao = parseInt(prompt("O que deseja Fazer:\n 1- Adicionar chamado\n 2 - listar chamado \n3 - listar resposta "));
 		
-		if(opcao == 1){adicionarChamado();}else {opcao == 2} {adicionarResposta();} {opcao == 3} {listarChamados();} 
+		if(opcao == 1){adicionarChamado();}else {opcao == 2} {adicionarResposta();} {opcao == 3} {listarResposta();} 
 		
 		continua = prompt("Deseja fazer novas tarefas? Digite s para confirmar:");
 }
